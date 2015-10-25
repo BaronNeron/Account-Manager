@@ -6,13 +6,24 @@
   Copyright © 2015 Andrey Kozlov. All rights reserved.
 */
 
-
-
+/*Notification*/
+"Success_Message_Title"="Success";
+"Info_Message_Title"="Info";
+"Username_Was_Copy"="Username was copy in buffer";
+"Password_Was_Copy"="Password was copy in buffer";
+"Buffer_Is_Clear"="Buffer is clear";
 
 /* Navigation item titles locale */
 "Types_Navigation_Item_Title"="Accounts";
 "Select_Type_Navigation_Item_Title"="Type";
 "Add_Account_Navigation_Item_Title"="Add account";
+
+/*Types view controller locale*/
+"More_Action_Title"="More";
+"Select_Action_Message"="Select action with current account";
+"Copy_Username_Alert_Action_Title"="Copy username";
+"Copy_Password_Alert_Action_Title"="Copy password";
+"Cancel_Alert_Action_Title"="Cancel";
 
 /* Add account view locale */
 "Username_Label_Text"="Username";

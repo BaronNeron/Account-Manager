@@ -8,9 +8,12 @@
 
 #import "Account.h"
 #import "AccountsViewController.h"
+#import "CustomColorHelper.h"
 #import "LocalizationHelper.h"
+#import "TimerManager.h"
 #import "Type.h"
 #import "TypesViewController.h"
+#import "TWMessageBarManager.h"
 #import "ResizeImageHelper.h"
 
 @interface TypesViewController ()
@@ -65,6 +68,41 @@
     [cell.detailTextLabel setText:type.defaultAccount.username];
     cell.imageView.image = [ResizeImageHelper resizeImage:[UIImage imageNamed:type.name] :CGSizeMake(35, 35)];
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+}
+
+- (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+    Account *account = [[self.fetchedResultsController objectAtIndexPath:indexPath] defaultAccount];
+    UITableViewRowAction *moreAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:Locale(@"More_Action_Title") handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
+        UIAlertController * actionSheet = [UIAlertController alertControllerWithTitle:@"" message:Locale(@"Select_Action_Message")preferredStyle:UIAlertControllerStyleActionSheet];
+
+        UIAlertAction* copyUsername = [UIAlertAction actionWithTitle:Locale(@"Copy_Username_Alert_Action_Title") style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){
+            UIPasteboard *pb = [UIPasteboard generalPasteboard];
+            [pb setString:account.username];
+            [actionSheet dismissViewControllerAnimated:YES completion:nil];
+            [[TWMessageBarManager sharedInstance] showMessageWithTitle:Locale(@"Success_Message_Title") description:Locale(@"Username_Was_Copy") type:TWMessageBarMessageTypeSuccess];
+        }];
+
+        UIAlertAction* copyPassword = [UIAlertAction actionWithTitle:Locale(@"Copy_Password_Alert_Action_Title") style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){
+            UIPasteboard *pb = [UIPasteboard generalPasteboard];
+            [pb setString:account.password];
+            [[TimerManager sharedManager] clearBufferAfter:20.0f];
+            [actionSheet dismissViewControllerAnimated:YES completion:nil];
+            [[TWMessageBarManager sharedInstance] showMessageWithTitle:Locale(@"Success_Message_Title") description:Locale(@"Password_Was_Copy") type:TWMessageBarMessageTypeSuccess];
+            
+        }];
+
+        UIAlertAction* cancel = [UIAlertAction actionWithTitle:Locale(@"Cancel_Alert_Action_Title") style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){
+            [actionSheet dismissViewControllerAnimated:YES completion:nil];
+        }];
+        [actionSheet addAction:copyUsername];
+        [actionSheet addAction:copyPassword];
+        [actionSheet addAction:cancel];
+        [self presentViewController:actionSheet animated:YES completion:nil];
+    }];
+    moreAction.backgroundColor = [CustomColorHelper greenColor];
+    
+    return @[moreAction];
+    
 }
 
 #pragma mark - Navigation

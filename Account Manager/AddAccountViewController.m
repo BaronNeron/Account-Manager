@@ -27,6 +27,9 @@
     if(!self.type.defaultAccount){
         [self.defaultAccountSwitch setEnabled:NO];
     }
+    else{
+        [self.defaultAccountSwitch setOn:NO];
+    }
 }
 
 - (void)didReceiveMemoryWarning {

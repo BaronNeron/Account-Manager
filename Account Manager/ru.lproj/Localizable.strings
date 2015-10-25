@@ -6,13 +6,24 @@
   Copyright © 2015 Andrey Kozlov. All rights reserved.
 */
 
-
-
+/*Notification*/
+"Success_Message_Title"="Готово";
+"Info_Message_Title"="Информация";
+"Username_Was_Copy"="Имя пользователя скопировано в буфер";
+"Password_Was_Copy"="Пароль скопирован в буфер";
+"Buffer_Is_Clear"="Буфер очищен";
 
 /*Локализация заголовков навигационной панели*/
 "Types_Navigation_Item_Title"="Аккаунты";
 "Select_Type_Navigation_Item_Title"="Тип";
 "Add_Account_Navigation_Item_Title"="Добавить";
+
+/*Types view controller locale*/
+"More_Action_Title"="Еще";
+"Select_Action_Message"="Выберите действие с текущим аккаунтом";
+"Copy_Username_Alert_Action_Title"="Копировать имя пользователя";
+"Copy_Password_Alert_Action_Title"="Копировать пароль";
+"Cancel_Alert_Action_Title"="Отмена";
 
 /* Локализация контроллера добавления аккаунта */
 "Username_Label_Text"="Имя пользователя";
