@@ -1,0 +1,20 @@
+/* 
+  Localizable.strings
+  Account Manager
+
+  Created by Admin on 23/10/15.
+  Copyright © 2015 Andrey Kozlov. All rights reserved.
+*/
+
+
+
+
+/*Локализация заголовков навигационной панели*/
+"Types_Navigation_Item_Title"="Аккаунты";
+"Select_Type_Navigation_Item_Title"="Тип";
+"Add_Account_Navigation_Item_Title"="Добавить";
+
+/* Локализация контроллера добавления аккаунта */
+"Username_Label_Text"="Имя пользователя";
+"Password_Label_Text"="Пароль";
+"Default_Account_Label_Text"="Аккаунт по умолчанию";
