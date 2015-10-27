@@ -12,7 +12,7 @@
 #import "SelectTypeViewController.h"
 #import "TypesViewController.h"
 
-@interface AddAccountViewController ()
+@interface AddAccountViewController () <UITextFieldDelegate>
 
 @end
 
@@ -24,6 +24,10 @@
     self.usernameLabel.text = Locale(@"Username_Label_Text");
     self.passwordLabel.text = Locale(@"Password_Label_Text");
     self.defaultAccountLabel.text = Locale(@"Default_Account_Label_Text");
+
+    self.usernameTextField.delegate = self;
+    self.passwordTextField.delegate = self;
+    
     if(!self.type.defaultAccount){
         [self.defaultAccountSwitch setEnabled:NO];
     }
@@ -45,6 +49,14 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
     TypesViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"Types"];
     [self.navigationController pushViewController:vc animated:YES];
+}
+
+
+#pragma mark - UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 @end

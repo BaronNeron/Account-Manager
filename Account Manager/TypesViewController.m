@@ -9,7 +9,9 @@
 #import "Account.h"
 #import "AccountsViewController.h"
 #import "CustomColorHelper.h"
+#import "DataManager.h"
 #import "LocalizationHelper.h"
+#import "SWRevealViewController.h"
 #import "TimerManager.h"
 #import "Type.h"
 #import "TypesViewController.h"
@@ -26,6 +28,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = Locale(@"Types_Navigation_Item_Title");
+    self.navigationController.navigationBar.tintColor = [CustomColorHelper greenColor];
+    SWRevealViewController *revealViewController = self.revealViewController;
+    if ( revealViewController )
+    {
+        [self.menuBarButton setTarget: self.revealViewController];
+        [self.menuBarButton setAction: @selector( revealToggle: )];
+        [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -78,6 +88,8 @@
         UIAlertAction* copyUsername = [UIAlertAction actionWithTitle:Locale(@"Copy_Username_Alert_Action_Title") style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){
             UIPasteboard *pb = [UIPasteboard generalPasteboard];
             [pb setString:account.username];
+            NSString *newHistoryDetail = [NSString stringWithFormat:@"Username for %@ was copy", account.defaultToType.name];
+            [[DataManager sharedManager]addHistoryWithDetail:newHistoryDetail];
             [actionSheet dismissViewControllerAnimated:YES completion:nil];
             [[TWMessageBarManager sharedInstance] showMessageWithTitle:Locale(@"Success_Message_Title") description:Locale(@"Username_Was_Copy") type:TWMessageBarMessageTypeSuccess];
         }];
@@ -85,6 +97,8 @@
         UIAlertAction* copyPassword = [UIAlertAction actionWithTitle:Locale(@"Copy_Password_Alert_Action_Title") style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){
             UIPasteboard *pb = [UIPasteboard generalPasteboard];
             [pb setString:account.password];
+            NSString *newHistoryDetail = [NSString stringWithFormat:@"Password for %@ was copy", account.defaultToType.name];
+            [[DataManager sharedManager]addHistoryWithDetail:newHistoryDetail];
             [[TimerManager sharedManager] clearBufferAfter:20.0f];
             [actionSheet dismissViewControllerAnimated:YES completion:nil];
             [[TWMessageBarManager sharedInstance] showMessageWithTitle:Locale(@"Success_Message_Title") description:Locale(@"Password_Was_Copy") type:TWMessageBarMessageTypeSuccess];

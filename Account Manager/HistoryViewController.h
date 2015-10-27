@@ -1,15 +1,15 @@
 //
-//  TypeViewController.h
+//  HistoryViewController.h
 //  Account Manager
 //
-//  Created by Admin on 23/10/15.
+//  Created by Admin on 27/10/15.
 //  Copyright © 2015 Andrey Kozlov. All rights reserved.
 //
 
 #import "CoreDataViewController.h"
 #import <UIKit/UIKit.h>
 
-@interface TypesViewController : CoreDataViewController
+@interface HistoryViewController : CoreDataViewController
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *menuBarButton;
 

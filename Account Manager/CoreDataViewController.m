@@ -7,6 +7,7 @@
 //
 
 #import "CoreDataViewController.h"
+#import "CustomColorHelper.h"
 #import "DataManager.h"
 
 @interface CoreDataViewController () <NSFetchedResultsControllerDelegate>

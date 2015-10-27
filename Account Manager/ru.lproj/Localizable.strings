@@ -6,6 +6,13 @@
   Copyright © 2015 Andrey Kozlov. All rights reserved.
 */
 
+/*Menu items*/
+"Accounts_Menu_Item"="Аккаунты";
+"History_Menu_Item"="История";
+"Settings_Menu_Item"="Настройки";
+"About_Menu_Item"="Информация";
+"Animation_Menu_Item"="Анимация";
+
 /*Notification*/
 "Success_Message_Title"="Готово";
 "Info_Message_Title"="Информация";
@@ -17,6 +24,7 @@
 "Types_Navigation_Item_Title"="Аккаунты";
 "Select_Type_Navigation_Item_Title"="Тип";
 "Add_Account_Navigation_Item_Title"="Добавить";
+"History_Navigation_Item_Title"="История";
 
 /*Types view controller locale*/
 "More_Action_Title"="Еще";

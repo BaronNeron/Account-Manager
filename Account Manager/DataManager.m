@@ -8,6 +8,7 @@
 
 #import "Account.h"
 #import "DataManager.h"
+#import "History.h"
 #import "Type.h"
 
 @implementation DataManager
@@ -66,6 +67,20 @@
     }
     else{
         NSLog(@"Default account for type %@ was changed", type.name);
+    }
+}
+
+- (void)addHistoryWithDetail:(NSString*)detail{
+    NSManagedObjectContext *context = self.managedObjectContext;
+    History *newHistory = [NSEntityDescription insertNewObjectForEntityForName:@"History" inManagedObjectContext:context];
+    newHistory.detail = detail;
+    newHistory.date = [NSDate date];
+    NSError *error = nil;
+    if(![context save:&error]){
+        NSLog(@"Can't save new history! %@ %@", error, [error localizedDescription]);
+    }
+    else{
+        NSLog(@"Histroy was added and save");
     }
 }
 

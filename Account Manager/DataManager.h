@@ -19,6 +19,7 @@
 +(DataManager*) sharedManager;
 - (Account*)addAccountWithType:(Type*)type username:(NSString*)username password:(NSString*)password;
 - (void)addTypeWithName:(NSString*)name;
+- (void)addHistoryWithDetail:(NSString*)detail;
 - (void)changeDefaultAccountForType:(Type*)type :(Account*)defaultAccount;
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;

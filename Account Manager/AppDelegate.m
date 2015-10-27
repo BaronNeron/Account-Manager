@@ -21,6 +21,7 @@
     for (NSString *type in types){
         [[DataManager sharedManager] addTypeWithName:type];
     }*/
+    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     return YES;
 }
 
