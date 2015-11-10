@@ -17,10 +17,15 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    /*NSArray *types = @[@"Apple", @"Dropbox", @"Facebook", @"Google", @"Instagramm", @"Skype", @"Twitter", @"Vkontakte", @"Yahoo", @"Yandex", @"YouTube"];
-    for (NSString *type in types){
-        [[DataManager sharedManager] addTypeWithName:type];
-    }*/
+    if (![[NSUserDefaults standardUserDefaults] boolForKey:@"has_launched_once"])
+    {
+        NSArray *types = @[@"Apple", @"Dropbox", @"Facebook", @"Google", @"Instagramm", @"Skype", @"Twitter", @"Vkontakte", @"Yahoo", @"Yandex", @"YouTube"];
+        for (NSString *type in types){
+            [[DataManager sharedManager] addTypeWithName:type];
+        }
+        [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"has_launched_once"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+    }
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     return YES;
 }

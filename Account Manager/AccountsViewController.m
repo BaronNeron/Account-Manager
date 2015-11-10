@@ -73,8 +73,9 @@
 }
 
 - (NSArray *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath {
+    Account *currentAccount = [self.fetchedResultsController objectAtIndexPath:indexPath];
     UITableViewRowAction *deleteAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:Locale(@"Delete_Action_Title") handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
-        [[DataManager sharedManager]deleteAccount:[self.fetchedResultsController objectAtIndexPath:indexPath]];
+        [[DataManager sharedManager]deleteAccount:currentAccount];
         [[TWMessageBarManager sharedInstance] showMessageWithTitle:Locale(@"Success_Message_Title") description:Locale(@"Account_Was_Delete") type:TWMessageBarMessageTypeError];
     }];
     deleteAction.backgroundColor = [CustomColorHelper redColor];
@@ -82,19 +83,23 @@
     UITableViewRowAction *editAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault title:Locale(@"Edit_Action_Title") handler:^(UITableViewRowAction *action, NSIndexPath *indexPath) {
         UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
         AddAccountViewController* vc = [storyboard instantiateViewControllerWithIdentifier:@"addAccount"];
-        vc.account = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        vc.account = currentAccount;
         [self.navigationController pushViewController:vc animated:YES];
     }];
     editAction.backgroundColor = [CustomColorHelper yellowColor];
     
-    return @[deleteAction, editAction];
+    return currentAccount.defaultToType == nil ? @[deleteAction, editAction] : @[editAction];
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath   *)indexPath
 {
-    Account *account = [self.fetchedResultsController objectAtIndexPath:indexPath];
-    [[DataManager sharedManager]changeDefaultAccountForType:account.type :account];
-    [self.tableView reloadData];
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    bool changeByTouch = [defaults boolForKey:@"change_by_touch"];
+    if(changeByTouch == YES) {
+        Account *account = [self.fetchedResultsController objectAtIndexPath:indexPath];
+        [[DataManager sharedManager]changeDefaultAccountForType:account.type :account];
+        [self.tableView reloadData];
+    }
 }
 
 #pragma mark - Navigation

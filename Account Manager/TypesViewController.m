@@ -99,7 +99,11 @@
             [pb setString:account.password];
             NSString *newHistoryDetail = [NSString stringWithFormat:@"Password for %@ was copy", account.defaultToType.name];
             [[DataManager sharedManager]addHistoryWithDetail:newHistoryDetail];
-            [[TimerManager sharedManager] clearBufferAfter:20.0f];
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            bool clearBuffer = [defaults boolForKey:@"clear_buffer"];
+            if(clearBuffer == YES) {
+                [[TimerManager sharedManager] clearBufferAfter:20.0f];
+            }
             [actionSheet dismissViewControllerAnimated:YES completion:nil];
             [[TWMessageBarManager sharedInstance] showMessageWithTitle:Locale(@"Success_Message_Title") description:Locale(@"Password_Was_Copy") type:TWMessageBarMessageTypeSuccess];
             
