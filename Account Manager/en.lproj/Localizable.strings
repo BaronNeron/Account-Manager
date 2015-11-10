@@ -28,6 +28,7 @@
 "Select_Type_Navigation_Item_Title"="Type";
 "Add_Account_Navigation_Item_Title"="Add account";
 "History_Navigation_Item_Title"="History";
+"About_Navigation_Item_Title"="About";
 
 /*Types view controller locale*/
 "More_Action_Title"="More";
@@ -44,3 +45,15 @@
 /*Acccounts view locale*/
 "Delete_Action_Title"="Delete";
 "Edit_Action_Title"="Edit";
+
+/*About view locale*/
+"firstName"="First name";
+"secondName"="Second name";
+"group"="Group";
+"email"="Email";
+"phone"="Phone";
+"myFirstName"="Kozlov";
+"mySecondName"="Andrey";
+"myGroup"="12-IVT-1";
+"myEmail"="neron1888@gmail.com";
+"myPhone"="+7(915)808-29-71";

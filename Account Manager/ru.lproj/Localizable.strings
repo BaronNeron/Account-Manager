@@ -28,6 +28,7 @@
 "Select_Type_Navigation_Item_Title"="Тип";
 "Add_Account_Navigation_Item_Title"="Добавить";
 "History_Navigation_Item_Title"="История";
+"About_Navigation_Item_Title"="Информация";
 
 /*Types view controller locale*/
 "More_Action_Title"="Еще";
@@ -44,3 +45,15 @@
 /*Локализация контроллера просмотров аккаунтов*/
 "Delete_Action_Title"="Удалить";
 "Edit_Action_Title"="Изменить";
+
+/*Локализация контроллера отображения информации*/
+"firstName"="Имя";
+"secondName"="Фамилия";
+"group"="Группа";
+"email"="Email";
+"phone"="Номер";
+"myFirstName"="Козлов";
+"mySecondName"="Андрей";
+"myGroup"="12-ИВТ-1";
+"myEmail"="neron1888@gmail.com";
+"myPhone"="+7(915)808-29-71";

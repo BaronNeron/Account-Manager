@@ -7,43 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1E5DF0D91BE3811A007802DD /* AnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5DF0D81BE3811A007802DD /* AnimationViewController.m */; settings = {ASSET_TAGS = (); }; };
-		845729BC1BDAA464004848F4 /* AddAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 845729BB1BDAA464004848F4 /* AddAccountViewController.m */; settings = {ASSET_TAGS = (); }; };
-		845877681BDD2D0000ABB659 /* CustomColorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 845877671BDD2D0000ABB659 /* CustomColorHelper.m */; settings = {ASSET_TAGS = (); }; };
-		845878F41BDB019900E4EDC0 /* ResizeImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 845878F31BDB019900E4EDC0 /* ResizeImageHelper.m */; settings = {ASSET_TAGS = (); }; };
-		8459BDE21BDAC7E300A0AABA /* SelectTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8459BDE11BDAC7E300A0AABA /* SelectTypeViewController.m */; settings = {ASSET_TAGS = (); }; };
-		8459BDE51BDAD5C300A0AABA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8459BDE31BDAD5C300A0AABA /* Main.storyboard */; settings = {ASSET_TAGS = (); }; };
-		8467FD831BDF461100F786B8 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8467FD821BDF461100F786B8 /* HistoryViewController.m */; settings = {ASSET_TAGS = (); }; };
-		8467FD881BDF473F00F786B8 /* History+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 8467FD851BDF473F00F786B8 /* History+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		8467FD891BDF473F00F786B8 /* History.m in Sources */ = {isa = PBXBuildFile; fileRef = 8467FD871BDF473F00F786B8 /* History.m */; settings = {ASSET_TAGS = (); }; };
-		8467FD8C1BDF598700F786B8 /* StringFromDateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8467FD8B1BDF598700F786B8 /* StringFromDateHelper.m */; settings = {ASSET_TAGS = (); }; };
-		846C19641BDD7B3A00753289 /* icon-error.png in Resources */ = {isa = PBXBuildFile; fileRef = 846C195B1BDD7B3A00753289 /* icon-error.png */; settings = {ASSET_TAGS = (); }; };
-		846C19651BDD7B3A00753289 /* icon-error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 846C195C1BDD7B3A00753289 /* icon-error@2x.png */; settings = {ASSET_TAGS = (); }; };
-		846C19661BDD7B3A00753289 /* icon-info.png in Resources */ = {isa = PBXBuildFile; fileRef = 846C195D1BDD7B3A00753289 /* icon-info.png */; settings = {ASSET_TAGS = (); }; };
-		846C19671BDD7B3A00753289 /* icon-info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 846C195E1BDD7B3A00753289 /* icon-info@2x.png */; settings = {ASSET_TAGS = (); }; };
-		846C19681BDD7B3A00753289 /* icon-success.png in Resources */ = {isa = PBXBuildFile; fileRef = 846C195F1BDD7B3A00753289 /* icon-success.png */; settings = {ASSET_TAGS = (); }; };
-		846C19691BDD7B3A00753289 /* icon-success@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 846C19601BDD7B3A00753289 /* icon-success@2x.png */; settings = {ASSET_TAGS = (); }; };
-		846C196A1BDD7B3A00753289 /* TWMessageBarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 846C19621BDD7B3A00753289 /* TWMessageBarManager.m */; settings = {ASSET_TAGS = (); }; };
-		846C196B1BDD7B3A00753289 /* TWMessageBarManager.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 846C19631BDD7B3A00753289 /* TWMessageBarManager.podspec */; settings = {ASSET_TAGS = (); }; };
-		846C196F1BDD7B5200753289 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846C196E1BDD7B5200753289 /* SWRevealViewController.m */; settings = {ASSET_TAGS = (); }; };
-		846C19721BDD8C5F00753289 /* TimerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 846C19711BDD8C5F00753289 /* TimerManager.m */; settings = {ASSET_TAGS = (); }; };
-		846E66B71BDE7C6700B20C61 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846E66B61BDE7C6700B20C61 /* MenuViewController.m */; settings = {ASSET_TAGS = (); }; };
-		846E66BA1BDE812D00B20C61 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846E66B91BDE812D00B20C61 /* NavigationController.m */; settings = {ASSET_TAGS = (); }; };
-		84C5D9A71BDA523C00346A17 /* Account+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C5D9A01BDA523C00346A17 /* Account+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		84C5D9A81BDA523C00346A17 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C5D9A21BDA523C00346A17 /* Account.m */; settings = {ASSET_TAGS = (); }; };
-		84C5D9A91BDA523C00346A17 /* Type+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C5D9A41BDA523C00346A17 /* Type+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		84C5D9AA1BDA523C00346A17 /* Type.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C5D9A61BDA523C00346A17 /* Type.m */; settings = {ASSET_TAGS = (); }; };
-		84C5D9AD1BDA542100346A17 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C5D9AC1BDA542100346A17 /* DataManager.m */; settings = {ASSET_TAGS = (); }; };
-		84C5D9B01BDA601C00346A17 /* TypesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C5D9AF1BDA601C00346A17 /* TypesViewController.m */; settings = {ASSET_TAGS = (); }; };
-		84C5D9DC1BDA61CB00346A17 /* CoreDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C5D9DB1BDA61CB00346A17 /* CoreDataViewController.m */; settings = {ASSET_TAGS = (); }; };
+		1E5DF0D91BE3811A007802DD /* AnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5DF0D81BE3811A007802DD /* AnimationViewController.m */; };
+		845729BC1BDAA464004848F4 /* AddAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 845729BB1BDAA464004848F4 /* AddAccountViewController.m */; };
+		845877681BDD2D0000ABB659 /* CustomColorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 845877671BDD2D0000ABB659 /* CustomColorHelper.m */; };
+		845878F41BDB019900E4EDC0 /* ResizeImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 845878F31BDB019900E4EDC0 /* ResizeImageHelper.m */; };
+		8459BDE21BDAC7E300A0AABA /* SelectTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8459BDE11BDAC7E300A0AABA /* SelectTypeViewController.m */; };
+		8459BDE51BDAD5C300A0AABA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8459BDE31BDAD5C300A0AABA /* Main.storyboard */; };
+		8467FD831BDF461100F786B8 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8467FD821BDF461100F786B8 /* HistoryViewController.m */; };
+		8467FD881BDF473F00F786B8 /* History+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 8467FD851BDF473F00F786B8 /* History+CoreDataProperties.m */; };
+		8467FD891BDF473F00F786B8 /* History.m in Sources */ = {isa = PBXBuildFile; fileRef = 8467FD871BDF473F00F786B8 /* History.m */; };
+		8467FD8C1BDF598700F786B8 /* StringFromDateHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8467FD8B1BDF598700F786B8 /* StringFromDateHelper.m */; };
+		846C19641BDD7B3A00753289 /* icon-error.png in Resources */ = {isa = PBXBuildFile; fileRef = 846C195B1BDD7B3A00753289 /* icon-error.png */; };
+		846C19651BDD7B3A00753289 /* icon-error@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 846C195C1BDD7B3A00753289 /* icon-error@2x.png */; };
+		846C19661BDD7B3A00753289 /* icon-info.png in Resources */ = {isa = PBXBuildFile; fileRef = 846C195D1BDD7B3A00753289 /* icon-info.png */; };
+		846C19671BDD7B3A00753289 /* icon-info@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 846C195E1BDD7B3A00753289 /* icon-info@2x.png */; };
+		846C19681BDD7B3A00753289 /* icon-success.png in Resources */ = {isa = PBXBuildFile; fileRef = 846C195F1BDD7B3A00753289 /* icon-success.png */; };
+		846C19691BDD7B3A00753289 /* icon-success@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 846C19601BDD7B3A00753289 /* icon-success@2x.png */; };
+		846C196A1BDD7B3A00753289 /* TWMessageBarManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 846C19621BDD7B3A00753289 /* TWMessageBarManager.m */; };
+		846C196B1BDD7B3A00753289 /* TWMessageBarManager.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 846C19631BDD7B3A00753289 /* TWMessageBarManager.podspec */; };
+		846C196F1BDD7B5200753289 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846C196E1BDD7B5200753289 /* SWRevealViewController.m */; };
+		846C19721BDD8C5F00753289 /* TimerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 846C19711BDD8C5F00753289 /* TimerManager.m */; };
+		846E66B71BDE7C6700B20C61 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846E66B61BDE7C6700B20C61 /* MenuViewController.m */; };
+		846E66BA1BDE812D00B20C61 /* NavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 846E66B91BDE812D00B20C61 /* NavigationController.m */; };
+		84C5D9A71BDA523C00346A17 /* Account+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C5D9A01BDA523C00346A17 /* Account+CoreDataProperties.m */; };
+		84C5D9A81BDA523C00346A17 /* Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C5D9A21BDA523C00346A17 /* Account.m */; };
+		84C5D9A91BDA523C00346A17 /* Type+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C5D9A41BDA523C00346A17 /* Type+CoreDataProperties.m */; };
+		84C5D9AA1BDA523C00346A17 /* Type.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C5D9A61BDA523C00346A17 /* Type.m */; };
+		84C5D9AD1BDA542100346A17 /* DataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C5D9AC1BDA542100346A17 /* DataManager.m */; };
+		84C5D9B01BDA601C00346A17 /* TypesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C5D9AF1BDA601C00346A17 /* TypesViewController.m */; };
+		84C5D9DC1BDA61CB00346A17 /* CoreDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C5D9DB1BDA61CB00346A17 /* CoreDataViewController.m */; };
 		84C5D9E81BDA7FF700346A17 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84C5D9EA1BDA7FF700346A17 /* Localizable.strings */; };
-		84C5D9ED1BDA801500346A17 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84C5D9EC1BDA801500346A17 /* Settings.bundle */; settings = {ASSET_TAGS = (); }; };
-		84C5D9F21BDA884100346A17 /* AccountsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C5D9F11BDA884100346A17 /* AccountsViewController.m */; settings = {ASSET_TAGS = (); }; };
+		84C5D9ED1BDA801500346A17 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 84C5D9EC1BDA801500346A17 /* Settings.bundle */; };
+		84C5D9F21BDA884100346A17 /* AccountsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C5D9F11BDA884100346A17 /* AccountsViewController.m */; };
 		84E19E0A1BDA411C0045417A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E19E091BDA411C0045417A /* main.m */; };
 		84E19E0D1BDA411C0045417A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E19E0C1BDA411C0045417A /* AppDelegate.m */; };
 		84E19E161BDA411C0045417A /* Account_Manager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84E19E141BDA411C0045417A /* Account_Manager.xcdatamodeld */; };
 		84E19E181BDA411C0045417A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84E19E171BDA411C0045417A /* Assets.xcassets */; };
 		84E19E1B1BDA411C0045417A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E19E191BDA411C0045417A /* LaunchScreen.storyboard */; };
+		84E1EB8C1BF27F290011F719 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E1EB8B1BF27F290011F719 /* AboutViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -112,6 +113,8 @@
 		84E19E171BDA411C0045417A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		84E19E1A1BDA411C0045417A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84E19E1C1BDA411C0045417A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84E1EB8A1BF27F290011F719 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		84E1EB8B1BF27F290011F719 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +215,8 @@
 		84C5D9EE1BDA876E00346A17 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				84E1EB8A1BF27F290011F719 /* AboutViewController.h */,
+				84E1EB8B1BF27F290011F719 /* AboutViewController.m */,
 				84C5D9F01BDA884100346A17 /* AccountsViewController.h */,
 				84C5D9F11BDA884100346A17 /* AccountsViewController.m */,
 				845729BA1BDAA464004848F4 /* AddAccountViewController.h */,
@@ -395,6 +400,7 @@
 				846E66BA1BDE812D00B20C61 /* NavigationController.m in Sources */,
 				84C5D9A91BDA523C00346A17 /* Type+CoreDataProperties.m in Sources */,
 				8467FD881BDF473F00F786B8 /* History+CoreDataProperties.m in Sources */,
+				84E1EB8C1BF27F290011F719 /* AboutViewController.m in Sources */,
 				84C5D9F21BDA884100346A17 /* AccountsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -515,6 +521,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Account Manager/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -527,6 +534,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Account Manager/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
