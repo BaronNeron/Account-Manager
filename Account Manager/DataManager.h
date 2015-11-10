@@ -6,6 +6,7 @@
 //  Copyright © 2015 Andrey Kozlov. All rights reserved.
 //
 
+#import "Account.h"
 #import <CoreData/CoreData.h>
 #import <Foundation/Foundation.h>
 #import "Type.h"
@@ -16,11 +17,13 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
-+(DataManager*) sharedManager;
-- (Account*)addAccountWithType:(Type*)type username:(NSString*)username password:(NSString*)password;
-- (void)addTypeWithName:(NSString*)name;
-- (void)addHistoryWithDetail:(NSString*)detail;
-- (void)changeDefaultAccountForType:(Type*)type :(Account*)defaultAccount;
++(DataManager *) sharedManager;
+- (Account *)addAccountWithType:(Type *)type username:(NSString *)username password:(NSString *)password;
+- (void)editAccount:(Account *)account username:(NSString *)username password:(NSString *)password;
+- (void)deleteAccount:(Account *)account;
+- (void)addTypeWithName:(NSString *)name;
+- (void)addHistoryWithDetail:(NSString *)detail;
+- (void)changeDefaultAccountForType:(Type *)type :(Account *)defaultAccount;
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 

@@ -19,6 +19,9 @@
 "Username_Was_Copy"="Имя пользователя скопировано в буфер";
 "Password_Was_Copy"="Пароль скопирован в буфер";
 "Buffer_Is_Clear"="Буфер очищен";
+"Account_Was_Added"="Аккаунт был добавлен";
+"Account_Was_Edit"="Аккаунт был изменен";
+"Account_Was_Delete"="Аккаунт был удален";
 
 /*Локализация заголовков навигационной панели*/
 "Types_Navigation_Item_Title"="Аккаунты";
@@ -37,3 +40,7 @@
 "Username_Label_Text"="Имя пользователя";
 "Password_Label_Text"="Пароль";
 "Default_Account_Label_Text"="Аккаунт по умолчанию";
+
+/*Локализация контроллера просмотров аккаунтов*/
+"Delete_Action_Title"="Удалить";
+"Edit_Action_Title"="Изменить";

@@ -11,6 +11,7 @@
 #import "LocalizationHelper.h"
 #import "SelectTypeViewController.h"
 #import "TypesViewController.h"
+#import "TWMessageBarManager.h"
 
 @interface AddAccountViewController () <UITextFieldDelegate>
 
@@ -28,11 +29,23 @@
     self.usernameTextField.delegate = self;
     self.passwordTextField.delegate = self;
     
-    if(!self.type.defaultAccount){
-        [self.defaultAccountSwitch setEnabled:NO];
+    if(self.account){
+        self.usernameTextField.text = self.account.username;
+        self.passwordTextField.text = self.account.password;
+        if(self.account.defaultToType){
+            self.defaultAccountSwitch.on = YES;
+        }
+        else{
+            self.defaultAccountSwitch.on = NO;
+        }
     }
     else{
-        [self.defaultAccountSwitch setOn:NO];
+        if(self.type.defaultAccount){
+            self.defaultAccountSwitch.on = NO;
+        }
+        else{
+            self.defaultAccountSwitch.enabled = NO;
+        }
     }
 }
 
@@ -41,14 +54,24 @@
 }
 
 - (IBAction)saveAccount:(id)sender {
-    Account* newAccount = [[DataManager sharedManager] addAccountWithType:self.type username:self.usernameTextField.text password:self.passwordTextField.text];
-    if(self.defaultAccountSwitch.isOn){
-        [[DataManager sharedManager]changeDefaultAccountForType:self.type :newAccount];
-    }
     NSString * storyboardName = @"Main";
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle: nil];
     TypesViewController * vc = [storyboard instantiateViewControllerWithIdentifier:@"Types"];
     [self.navigationController pushViewController:vc animated:YES];
+    if(!self.account){
+        Account* newAccount = [[DataManager sharedManager] addAccountWithType:self.type username:self.usernameTextField.text password:self.passwordTextField.text];
+        if(self.defaultAccountSwitch.isOn){
+            [[DataManager sharedManager]changeDefaultAccountForType:self.type :newAccount];
+        }
+        [[TWMessageBarManager sharedInstance] showMessageWithTitle:Locale(@"Success_Message_Title") description:Locale(@"Account_Was_Added") type:TWMessageBarMessageTypeSuccess];
+    }
+    else{
+        [[DataManager sharedManager] editAccount:self.account username:self.usernameTextField.text password:self.passwordTextField.text];
+        if(self.defaultAccountSwitch.isOn){
+            [[DataManager sharedManager]changeDefaultAccountForType:self.account.type :self.account];
+        }
+        [[TWMessageBarManager sharedInstance] showMessageWithTitle:Locale(@"Success_Message_Title") description:Locale(@"Account_Was_Edit") type:TWMessageBarMessageTypeInfo];
+    }
 }
 
 

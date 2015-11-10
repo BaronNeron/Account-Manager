@@ -42,6 +42,34 @@
     }
 }
 
+- (void)editAccount:(Account*)account username:(NSString*)username password:(NSString*)password{
+    NSManagedObjectContext *context = self.managedObjectContext;
+    Account *editAccount = account;
+    editAccount.username = username;
+    editAccount.password = password;
+    NSError *error = nil;
+    if(![context save:&error]){
+        NSLog(@"Can't edit account! %@ %@", error, [error localizedDescription]);
+    }
+    else{
+        NSLog(@"Account %@ was edit and save", username);
+    }
+}
+
+-(void)deleteAccount:(Account *)account{
+    NSManagedObjectContext *context = self.managedObjectContext;
+    [context deleteObject:account];
+    
+    NSError *error = nil;
+    if (![context save:&error]) {
+        NSLog(@"Cant' delete account %@, %@", error, [error userInfo]);
+        abort();
+    }
+    else{
+        NSLog(@"Account was delete");
+    }
+}
+
 - (void)addTypeWithName:(NSString*)name{
     NSManagedObjectContext *context = self.managedObjectContext;
     Type *newType = [NSEntityDescription insertNewObjectForEntityForName:@"Type" inManagedObjectContext:context];

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1E5DF0D91BE3811A007802DD /* AnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5DF0D81BE3811A007802DD /* AnimationViewController.m */; settings = {ASSET_TAGS = (); }; };
 		845729BC1BDAA464004848F4 /* AddAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 845729BB1BDAA464004848F4 /* AddAccountViewController.m */; settings = {ASSET_TAGS = (); }; };
 		845877681BDD2D0000ABB659 /* CustomColorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 845877671BDD2D0000ABB659 /* CustomColorHelper.m */; settings = {ASSET_TAGS = (); }; };
 		845878F41BDB019900E4EDC0 /* ResizeImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 845878F31BDB019900E4EDC0 /* ResizeImageHelper.m */; settings = {ASSET_TAGS = (); }; };
@@ -46,6 +47,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1E5DF0D71BE3811A007802DD /* AnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationViewController.h; sourceTree = "<group>"; };
+		1E5DF0D81BE3811A007802DD /* AnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationViewController.m; sourceTree = "<group>"; };
 		845729BA1BDAA464004848F4 /* AddAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAccountViewController.h; sourceTree = "<group>"; };
 		845729BB1BDAA464004848F4 /* AddAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAccountViewController.m; sourceTree = "<group>"; };
 		845877661BDD2D0000ABB659 /* CustomColorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomColorHelper.h; sourceTree = "<group>"; };
@@ -213,6 +216,8 @@
 				84C5D9F11BDA884100346A17 /* AccountsViewController.m */,
 				845729BA1BDAA464004848F4 /* AddAccountViewController.h */,
 				845729BB1BDAA464004848F4 /* AddAccountViewController.m */,
+				1E5DF0D71BE3811A007802DD /* AnimationViewController.h */,
+				1E5DF0D81BE3811A007802DD /* AnimationViewController.m */,
 				8467FD811BDF461100F786B8 /* HistoryViewController.h */,
 				8467FD821BDF461100F786B8 /* HistoryViewController.m */,
 				846E66B51BDE7C6700B20C61 /* MenuViewController.h */,
@@ -378,6 +383,7 @@
 				84C5D9DC1BDA61CB00346A17 /* CoreDataViewController.m in Sources */,
 				8467FD8C1BDF598700F786B8 /* StringFromDateHelper.m in Sources */,
 				84C5D9A81BDA523C00346A17 /* Account.m in Sources */,
+				1E5DF0D91BE3811A007802DD /* AnimationViewController.m in Sources */,
 				84E19E0A1BDA411C0045417A /* main.m in Sources */,
 				845729BC1BDAA464004848F4 /* AddAccountViewController.m in Sources */,
 				84E19E161BDA411C0045417A /* Account_Manager.xcdatamodeld in Sources */,

@@ -19,6 +19,9 @@
 "Username_Was_Copy"="Username was copy in buffer";
 "Password_Was_Copy"="Password was copy in buffer";
 "Buffer_Is_Clear"="Buffer is clear";
+"Account_Was_Added"="Account was added";
+"Account_Was_Edit"="Account was edit";
+"Account_Was_Delete"="Account was delete";
 
 /* Navigation item titles locale */
 "Types_Navigation_Item_Title"="Accounts";
@@ -37,3 +40,7 @@
 "Username_Label_Text"="Username";
 "Password_Label_Text"="Password";
 "Default_Account_Label_Text"="Default account";
+
+/*Acccounts view locale*/
+"Delete_Action_Title"="Delete";
+"Edit_Action_Title"="Edit";

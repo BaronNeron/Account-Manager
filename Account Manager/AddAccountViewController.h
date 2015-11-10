@@ -6,12 +6,15 @@
 //  Copyright © 2015 Andrey Kozlov. All rights reserved.
 //
 
+#import "Account.h"
 #import "Type.h"
 #import <UIKit/UIKit.h>
 
 @interface AddAccountViewController : UIViewController
 
 @property (strong) Type *type;
+
+@property (strong) Account *account;
 
 @property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 

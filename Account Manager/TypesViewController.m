@@ -116,7 +116,6 @@
     moreAction.backgroundColor = [CustomColorHelper greenColor];
     
     return @[moreAction];
-    
 }
 
 #pragma mark - Navigation

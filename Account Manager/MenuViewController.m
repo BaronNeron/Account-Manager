@@ -52,7 +52,7 @@ NSArray *menu;
 {
     UITableViewCell *selectedCell=[tableView cellForRowAtIndexPath:indexPath];
     if([selectedCell.reuseIdentifier isEqualToString:@"Settings"]){
-        if (!UIApplicationOpenSettingsURLString) {
+        if (UIApplicationOpenSettingsURLString) {
             NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
             [[UIApplication sharedApplication] openURL:url];
         }
