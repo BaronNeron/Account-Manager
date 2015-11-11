@@ -37,6 +37,9 @@
 "Copy_Username_Alert_Action_Title"="Копировать имя пользователя";
 "Copy_Password_Alert_Action_Title"="Копировать пароль";
 "Cancel_Alert_Action_Title"="Отмена";
+"Username_For"="Пользователь для";
+"Password_For"="Пароль для";
+"Was_Copy"="был скопирован";
 
 /* Локализация контроллера добавления аккаунта */
 "Username_Label_Text"="Имя пользователя";

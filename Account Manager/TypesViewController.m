@@ -88,7 +88,7 @@
         UIAlertAction* copyUsername = [UIAlertAction actionWithTitle:Locale(@"Copy_Username_Alert_Action_Title") style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){
             UIPasteboard *pb = [UIPasteboard generalPasteboard];
             [pb setString:account.username];
-            NSString *newHistoryDetail = [NSString stringWithFormat:@"Username for %@ was copy", account.defaultToType.name];
+            NSString *newHistoryDetail = [NSString stringWithFormat:@"%@ %@ %@", Locale(@"Username_For"), account.defaultToType.name, Locale(@"Was_Copy")];
             [[DataManager sharedManager]addHistoryWithDetail:newHistoryDetail];
             [actionSheet dismissViewControllerAnimated:YES completion:nil];
             [[TWMessageBarManager sharedInstance] showMessageWithTitle:Locale(@"Success_Message_Title") description:Locale(@"Username_Was_Copy") type:TWMessageBarMessageTypeSuccess];
@@ -97,7 +97,7 @@
         UIAlertAction* copyPassword = [UIAlertAction actionWithTitle:Locale(@"Copy_Password_Alert_Action_Title") style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){
             UIPasteboard *pb = [UIPasteboard generalPasteboard];
             [pb setString:account.password];
-            NSString *newHistoryDetail = [NSString stringWithFormat:@"Password for %@ was copy", account.defaultToType.name];
+            NSString *newHistoryDetail = [NSString stringWithFormat:@"%@ %@ %@", Locale(@"Password_For"), account.defaultToType.name, Locale(@"Was_Copy")];
             [[DataManager sharedManager]addHistoryWithDetail:newHistoryDetail];
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
             bool clearBuffer = [defaults boolForKey:@"clear_buffer"];
