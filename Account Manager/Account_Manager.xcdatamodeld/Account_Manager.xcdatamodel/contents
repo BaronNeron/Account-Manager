@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8193.2" systemVersion="14E46" minimumToolsVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="9057" systemVersion="14F27" minimumToolsVersion="Automatic">
     <entity name="Account" representedClassName="Account" syncable="YES">
-        <attribute name="password" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="password" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="defaultToType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Type" inverseName="defaultAccount" inverseEntity="Type" syncable="YES"/>
         <relationship name="type" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Type" inverseName="accounts" inverseEntity="Type" syncable="YES"/>
@@ -16,7 +16,7 @@
         <relationship name="defaultAccount" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Account" inverseName="defaultToType" inverseEntity="Account" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Account" positionX="243" positionY="-13" width="128" height="103"/>
+        <element name="Account" positionX="243" positionY="-13" width="128" height="105"/>
         <element name="History" positionX="-20" positionY="135" width="128" height="73"/>
         <element name="Type" positionX="-29" positionY="-10" width="128" height="88"/>
     </elements>

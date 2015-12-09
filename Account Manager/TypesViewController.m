@@ -96,7 +96,9 @@
 
         UIAlertAction* copyPassword = [UIAlertAction actionWithTitle:Locale(@"Copy_Password_Alert_Action_Title") style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){
             UIPasteboard *pb = [UIPasteboard generalPasteboard];
-            [pb setString:account.password];
+            NSData *data = [account.password aes256DecryptWithKey:@"Salted__!*ôZP¿ý›ßž‚}.&¹8›dÆm"];
+            NSString* password = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+            [pb setString:password];
             NSString *newHistoryDetail = [NSString stringWithFormat:@"%@ %@ %@", Locale(@"Password_For"), account.defaultToType.name, Locale(@"Was_Copy")];
             [[DataManager sharedManager]addHistoryWithDetail:newHistoryDetail];
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];

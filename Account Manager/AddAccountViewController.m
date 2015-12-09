@@ -31,7 +31,7 @@
     if(self.account){
         self.navigationItem.title = Locale(@"Edit_Account_Navigation_Item_Title");
         self.usernameTextField.text = self.account.username;
-        self.passwordTextField.text = self.account.password;
+        self.passwordTextField.text = [[NSString alloc] initWithData:self.account.password encoding:NSUTF8StringEncoding];
         self.defaultAccountSwitch.on = self.account.defaultToType == nil ? NO : YES;
         self.defaultAccountSwitch.enabled = self.account.defaultToType == nil ? YES : NO;
     }

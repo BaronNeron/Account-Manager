@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Account (CoreDataProperties)
 
-@property (nullable, nonatomic, retain) NSString *password;
+@property (nullable, nonatomic, retain) NSData *password;
 @property (nullable, nonatomic, retain) NSString *username;
 @property (nullable, nonatomic, retain) Type *defaultToType;
 @property (nullable, nonatomic, retain) Type *type;

@@ -6,6 +6,7 @@
 //  Copyright © 2015 Andrey Kozlov. All rights reserved.
 //
 
+#import "AES256.h"
 #import "AppDelegate.h"
 #import "DataManager.h"
 
@@ -17,6 +18,17 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    /*------AES256 TEST------*/
+    /*
+    NSString *str = @"teststring";
+    NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
+    NSData *eData = [data aes256EncryptWithKey:@"Salted__!*ôZP¿ý›ßž‚}.&¹8›dÆm"];
+    NSString* eStr = [[NSString alloc] initWithData:eData encoding:NSUTF8StringEncoding];
+    NSLog(@"%@", eStr);
+    NSData *dData = [eData aes256DecryptWithKey:@"Salted__!*ôZP¿ý›ßž‚}.&¹8›dÆm"];
+    NSString* dStr = [[NSString alloc] initWithData:dData encoding:NSUTF8StringEncoding];
+    NSLog(@"%@", dStr);
+    */
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"has_launched_once"])
     {
         NSArray *types = @[@"Apple", @"Dropbox", @"Facebook", @"Google", @"Instagramm", @"Skype", @"Twitter", @"Vkontakte", @"Yahoo", @"Yandex", @"YouTube"];

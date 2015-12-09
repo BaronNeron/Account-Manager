@@ -30,7 +30,8 @@
     Account *newAccount = [NSEntityDescription insertNewObjectForEntityForName:@"Account" inManagedObjectContext:context];
     newAccount.type = type;
     newAccount.username = username;
-    newAccount.password = password;
+    NSData *data = [password dataUsingEncoding:NSUTF8StringEncoding];
+    newAccount.password = [data aes256EncryptWithKey:@"Salted__!*ôZP¿ý›ßž‚}.&¹8›dÆm"];
     NSError *error = nil;
     if(![context save:&error]){
         NSLog(@"Can't save new account! %@ %@", error, [error localizedDescription]);
@@ -46,7 +47,8 @@
     NSManagedObjectContext *context = self.managedObjectContext;
     Account *editAccount = account;
     editAccount.username = username;
-    editAccount.password = password;
+    NSData *data = [password dataUsingEncoding:NSUTF8StringEncoding];
+    editAccount.password = [data aes256EncryptWithKey:@"Salted__!*ôZP¿ý›ßž‚}.&¹8›dÆm"];
     NSError *error = nil;
     if(![context save:&error]){
         NSLog(@"Can't edit account! %@ %@", error, [error localizedDescription]);

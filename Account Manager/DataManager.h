@@ -6,6 +6,7 @@
 //  Copyright © 2015 Andrey Kozlov. All rights reserved.
 //
 
+#import "AES256.h"
 #import "Account.h"
 #import <CoreData/CoreData.h>
 #import <Foundation/Foundation.h>
