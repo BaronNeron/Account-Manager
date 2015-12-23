@@ -1,0 +1,15 @@
+/* 
+  JKLockScreen.strings
+  Account Manager
+
+  Created by Admin on 22/12/15.
+  Copyright © 2015 Andrey Kozlov. All rights reserved.
+*/
+
+"Pincode Title"="Введите код";
+"Pincode Subtitle"="";
+"New Pincode Title"="Введите код";
+"New Pincode Subtitle"="";
+"Pincode Title Confirm"="Повторите код";
+"Pincode Subtitle Confirm"="";
+"Pincode Not Match Title"="Код не соответствует";

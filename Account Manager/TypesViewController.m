@@ -10,6 +10,7 @@
 #import "AccountsViewController.h"
 #import "CustomColorHelper.h"
 #import "DataManager.h"
+#import "JKLLockScreenViewController.h"
 #import "LocalizationHelper.h"
 #import "SWRevealViewController.h"
 #import "TimerManager.h"
@@ -18,7 +19,7 @@
 #import "TWMessageBarManager.h"
 #import "ResizeImageHelper.h"
 
-@interface TypesViewController ()
+@interface TypesViewController () <JKLLockScreenViewControllerDataSource,JKLLockScreenViewControllerDelegate>
 
 @end
 
@@ -27,6 +28,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    if(![[NSUserDefaults standardUserDefaults] objectForKey:@"userPin"] || [[NSUserDefaults standardUserDefaults] boolForKey:@"needPin"]) {
+        JKLLockScreenViewController * viewController = [[JKLLockScreenViewController alloc] initWithNibName:NSStringFromClass([JKLLockScreenViewController class]) bundle:nil];
+        if (![[NSUserDefaults standardUserDefaults] objectForKey:@"userPin"]) {
+            [viewController setLockScreenMode:LockScreenModeNew];
+        }
+        else if([[NSUserDefaults standardUserDefaults] boolForKey:@"needPin"]){
+            [viewController setLockScreenMode:LockScreenModeNormal];
+        }
+        [viewController setDelegate:self];
+        [viewController setDataSource:self];
+        [self presentViewController:viewController animated:YES completion:NULL];
+    }
     self.navigationItem.title = Locale(@"Types_Navigation_Item_Title");
     self.navigationController.navigationBar.tintColor = [CustomColorHelper greenColor];
     SWRevealViewController *revealViewController = self.revealViewController;
@@ -95,6 +108,11 @@
         }];
 
         UIAlertAction* copyPassword = [UIAlertAction actionWithTitle:Locale(@"Copy_Password_Alert_Action_Title") style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){
+            JKLLockScreenViewController * viewController = [[JKLLockScreenViewController alloc] initWithNibName:NSStringFromClass([JKLLockScreenViewController class]) bundle:nil];
+            [viewController setLockScreenMode:LockScreenModeNormal];
+            [viewController setDelegate:self];
+            [viewController setDataSource:self];
+            [self presentViewController:viewController animated:YES completion:NULL];
             UIPasteboard *pb = [UIPasteboard generalPasteboard];
             NSData *data = [account.password aes256DecryptWithKey:@"Salted__!*ôZP¿ý›ßž‚}.&¹8›dÆm"];
             NSString* password = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
@@ -123,6 +141,31 @@
     
     return @[moreAction];
 }
+
+#pragma mark - Lock Screen
+
+- (void)unlockWasSuccessfulLockScreenViewController:(JKLLockScreenViewController *)lockScreenViewController pincode:(NSString *)pincode {
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"userPin"]) {
+        [[NSUserDefaults standardUserDefaults] setObject:pincode forKey:@"userPin"];
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"needPin"];
+    }
+    else if([[NSUserDefaults standardUserDefaults] boolForKey:@"needPin"]) {
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"needPin"];
+    }
+}
+
+
+- (BOOL)lockScreenViewController:(JKLLockScreenViewController *)lockScreenViewController pincode:(NSString *)pincode {
+    
+    NSString *realPincode = (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:@"userPin"];
+    return [pincode isEqualToString: realPincode];
+    
+}
+
+- (void)unlockWasCancelledLockScreenViewController:(JKLLockScreenViewController *)lockScreenViewController {
+    exit(0);
+}
+
 
 #pragma mark - Navigation
 
