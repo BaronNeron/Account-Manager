@@ -10,7 +10,6 @@
 #import "AccountsViewController.h"
 #import "CustomColorHelper.h"
 #import "DataManager.h"
-#import "JKLLockScreenViewController.h"
 #import "LocalizationHelper.h"
 #import "SWRevealViewController.h"
 #import "TimerManager.h"
@@ -19,7 +18,7 @@
 #import "TWMessageBarManager.h"
 #import "ResizeImageHelper.h"
 
-@interface TypesViewController () <JKLLockScreenViewControllerDataSource,JKLLockScreenViewControllerDelegate>
+@interface TypesViewController ()
 
 @end
 
@@ -28,18 +27,30 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if(![[NSUserDefaults standardUserDefaults] objectForKey:@"userPin"] || [[NSUserDefaults standardUserDefaults] boolForKey:@"needPin"]) {
-        JKLLockScreenViewController * viewController = [[JKLLockScreenViewController alloc] initWithNibName:NSStringFromClass([JKLLockScreenViewController class]) bundle:nil];
-        if (![[NSUserDefaults standardUserDefaults] objectForKey:@"userPin"]) {
-            [viewController setLockScreenMode:LockScreenModeNew];
-        }
-        else if([[NSUserDefaults standardUserDefaults] boolForKey:@"needPin"]){
-            [viewController setLockScreenMode:LockScreenModeNormal];
-        }
-        [viewController setDelegate:self];
-        [viewController setDataSource:self];
-        [self presentViewController:viewController animated:YES completion:NULL];
+    
+    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"masterKey"])
+    {
+        UIAlertController *alertController = [UIAlertController
+                                              alertControllerWithTitle:@"Первый запуск приложения"
+                                              message:@"Введите свой мастер-ключ"
+                                              preferredStyle:UIAlertControllerStyleAlert];
+        
+        [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+            textField.secureTextEntry = YES;
+        }];
+        
+        UIAlertAction *okAction = [UIAlertAction
+                                   actionWithTitle:NSLocalizedString(@"OK", @"OK action")
+                                   style:UIAlertActionStyleDefault
+                                   handler:^(UIAlertAction *action)
+                                   {
+                                       [[NSUserDefaults standardUserDefaults] setObject:alertController.textFields.firstObject.text forKey:@"masterKey"];
+                                   }];
+        [alertController addAction:okAction];
+        [self presentViewController:alertController animated:YES completion:nil];
     }
+    
+    
     self.navigationItem.title = Locale(@"Types_Navigation_Item_Title");
     self.navigationController.navigationBar.tintColor = [CustomColorHelper greenColor];
     SWRevealViewController *revealViewController = self.revealViewController;
@@ -108,19 +119,49 @@
         }];
 
         UIAlertAction* copyPassword = [UIAlertAction actionWithTitle:Locale(@"Copy_Password_Alert_Action_Title") style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){
-            UIPasteboard *pb = [UIPasteboard generalPasteboard];
-            NSData *data = [account.password aes256DecryptWithKey:[[NSUserDefaults standardUserDefaults] objectForKey:@"aes256key"]];
-            NSString* password = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-            [pb setString:password];
-            NSString *newHistoryDetail = [NSString stringWithFormat:@"%@ %@ %@", Locale(@"Password_For"), account.defaultToType.name, Locale(@"Was_Copy")];
-            [[DataManager sharedManager]addHistoryWithDetail:newHistoryDetail];
-            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-            bool clearBuffer = [defaults boolForKey:@"clear_buffer"];
-            if(clearBuffer == YES) {
-                [[TimerManager sharedManager] clearBufferAfter:20.0f];
-            }
-            [actionSheet dismissViewControllerAnimated:YES completion:nil];
-            [[TWMessageBarManager sharedInstance] showMessageWithTitle:Locale(@"Success_Message_Title") description:Locale(@"Password_Was_Copy") type:TWMessageBarMessageTypeSuccess];
+            UIAlertController *alertController = [UIAlertController
+                                                  alertControllerWithTitle:@"Требуется проверка"
+                                                  message:@"Введите свой мастер-ключ"
+                                                  preferredStyle:UIAlertControllerStyleAlert];
+            
+            [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
+                 textField.secureTextEntry = YES;
+             }];
+            
+            UIAlertAction *okAction = [UIAlertAction
+                                       actionWithTitle:NSLocalizedString(@"OK", @"OK action")
+                                       style:UIAlertActionStyleDefault
+                                       handler:^(UIAlertAction *action)
+                                       {
+                                           if([alertController.textFields.firstObject.text  isEqual: [[NSUserDefaults standardUserDefaults] objectForKey:@"masterKey"]]) {
+                                               UIPasteboard *pb = [UIPasteboard generalPasteboard];
+                                               NSData *data = [account.password aes256DecryptWithKey:[[NSUserDefaults standardUserDefaults] objectForKey:@"aes256key"]];
+                                               NSString* password = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+                                               [pb setString:password];
+                                               NSString *newHistoryDetail = [NSString stringWithFormat:@"%@ %@ %@", Locale(@"Password_For"), account.defaultToType.name, Locale(@"Was_Copy")];
+                                               [[DataManager sharedManager]addHistoryWithDetail:newHistoryDetail];
+                                               NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                                               bool clearBuffer = [defaults boolForKey:@"clear_buffer"];
+                                               if(clearBuffer == YES) {
+                                                   [[TimerManager sharedManager] clearBufferAfter:20.0f];
+                                               }
+                                               [actionSheet dismissViewControllerAnimated:YES completion:nil];
+                                               [[TWMessageBarManager sharedInstance] showMessageWithTitle:Locale(@"Success_Message_Title") description:Locale(@"Password_Was_Copy") type:TWMessageBarMessageTypeSuccess];
+                                           }
+                                           else {
+                                               [[TWMessageBarManager sharedInstance] showMessageWithTitle:Locale(@"Cancel_Message_Title") description:Locale(@"Wrong_Master_Key") type:TWMessageBarMessageTypeError];
+                                           }
+                                       }];
+            UIAlertAction *cancelAction = [UIAlertAction
+                                       actionWithTitle:NSLocalizedString(@"Cancel", @"Cancel action")
+                                       style:UIAlertActionStyleDefault
+                                       handler:^(UIAlertAction *action)
+                                       {
+                                           [[TWMessageBarManager sharedInstance] showMessageWithTitle:Locale(@"Cancel_Message_Title") description:Locale(@"Password_Copy_Was_Cancel") type:TWMessageBarMessageTypeError];
+                                       }];
+            [alertController addAction:cancelAction];
+            [alertController addAction:okAction];
+            [self presentViewController:alertController animated:YES completion:nil];
             
         }];
 
@@ -135,30 +176,6 @@
     moreAction.backgroundColor = [CustomColorHelper greenColor];
     
     return @[moreAction];
-}
-
-#pragma mark - Lock Screen
-
-- (void)unlockWasSuccessfulLockScreenViewController:(JKLLockScreenViewController *)lockScreenViewController pincode:(NSString *)pincode {
-    if (![[NSUserDefaults standardUserDefaults] objectForKey:@"userPin"]) {
-        [[NSUserDefaults standardUserDefaults] setObject:pincode forKey:@"userPin"];
-        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"needPin"];
-    }
-    else if([[NSUserDefaults standardUserDefaults] boolForKey:@"needPin"]) {
-        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:@"needPin"];
-    }
-}
-
-
-- (BOOL)lockScreenViewController:(JKLLockScreenViewController *)lockScreenViewController pincode:(NSString *)pincode {
-    
-    NSString *realPincode = (NSString *)[[NSUserDefaults standardUserDefaults] objectForKey:@"userPin"];
-    return [pincode isEqualToString: realPincode];
-    
-}
-
-- (void)unlockWasCancelledLockScreenViewController:(JKLLockScreenViewController *)lockScreenViewController {
-    exit(0);
 }
 
 

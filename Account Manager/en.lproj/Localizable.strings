@@ -16,12 +16,15 @@
 /*Notification*/
 "Success_Message_Title"="Success";
 "Info_Message_Title"="Info";
+"Cancel_Message_Title"="Cancel";
 "Username_Was_Copy"="Username was copy in buffer";
 "Password_Was_Copy"="Password was copy in buffer";
 "Buffer_Is_Clear"="Buffer is clear";
 "Account_Was_Added"="Account was added";
 "Account_Was_Edit"="Account was edit";
 "Account_Was_Delete"="Account was delete";
+"Password_Copy_Was_Cancel"="Password copy was cancel";
+"Wrong_Master_Key"="Wrong master key";
 
 /* Navigation item titles locale */
 "Types_Navigation_Item_Title"="Accounts";

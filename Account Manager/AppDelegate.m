@@ -30,7 +30,6 @@
         [[NSUserDefaults standardUserDefaults] setObject:[RandomStringHelper randomStringWithLength:32] forKey:@"aes256key"];
     }
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"needPin"];
     return YES;
 }
 

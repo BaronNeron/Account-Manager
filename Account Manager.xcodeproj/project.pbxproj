@@ -9,10 +9,6 @@
 /* Begin PBXBuildFile section */
 		1E5DF0D91BE3811A007802DD /* AnimationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E5DF0D81BE3811A007802DD /* AnimationViewController.m */; };
 		84471A401C29D2C5007D61E1 /* JKLockScreen.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84471A3F1C29D2C5007D61E1 /* JKLockScreen.strings */; };
-		84471A491C29E4B1007D61E1 /* JKLLockScreenNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 84471A431C29E4B1007D61E1 /* JKLLockScreenNumber.m */; };
-		84471A4A1C29E4B1007D61E1 /* JKLLockScreenPincodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84471A451C29E4B1007D61E1 /* JKLLockScreenPincodeView.m */; };
-		84471A4B1C29E4B1007D61E1 /* JKLLockScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84471A471C29E4B1007D61E1 /* JKLLockScreenViewController.m */; };
-		84471A4C1C29E4B1007D61E1 /* JKLLockScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84471A481C29E4B1007D61E1 /* JKLLockScreenViewController.xib */; };
 		845729BC1BDAA464004848F4 /* AddAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 845729BB1BDAA464004848F4 /* AddAccountViewController.m */; };
 		845877681BDD2D0000ABB659 /* CustomColorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 845877671BDD2D0000ABB659 /* CustomColorHelper.m */; };
 		845878F41BDB019900E4EDC0 /* ResizeImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 845878F31BDB019900E4EDC0 /* ResizeImageHelper.m */; };
@@ -58,13 +54,6 @@
 		1E5DF0D71BE3811A007802DD /* AnimationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationViewController.h; sourceTree = "<group>"; };
 		1E5DF0D81BE3811A007802DD /* AnimationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationViewController.m; sourceTree = "<group>"; };
 		84471A3F1C29D2C5007D61E1 /* JKLockScreen.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = JKLockScreen.strings; sourceTree = "<group>"; };
-		84471A421C29E4B1007D61E1 /* JKLLockScreenNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKLLockScreenNumber.h; sourceTree = "<group>"; };
-		84471A431C29E4B1007D61E1 /* JKLLockScreenNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKLLockScreenNumber.m; sourceTree = "<group>"; };
-		84471A441C29E4B1007D61E1 /* JKLLockScreenPincodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKLLockScreenPincodeView.h; sourceTree = "<group>"; };
-		84471A451C29E4B1007D61E1 /* JKLLockScreenPincodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKLLockScreenPincodeView.m; sourceTree = "<group>"; };
-		84471A461C29E4B1007D61E1 /* JKLLockScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKLLockScreenViewController.h; sourceTree = "<group>"; };
-		84471A471C29E4B1007D61E1 /* JKLLockScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKLLockScreenViewController.m; sourceTree = "<group>"; };
-		84471A481C29E4B1007D61E1 /* JKLLockScreenViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JKLLockScreenViewController.xib; sourceTree = "<group>"; };
 		845729BA1BDAA464004848F4 /* AddAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAccountViewController.h; sourceTree = "<group>"; };
 		845729BB1BDAA464004848F4 /* AddAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAccountViewController.m; sourceTree = "<group>"; };
 		845877661BDD2D0000ABB659 /* CustomColorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomColorHelper.h; sourceTree = "<group>"; };
@@ -147,20 +136,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		84471A411C29E4B1007D61E1 /* LockScreenViewController */ = {
-			isa = PBXGroup;
-			children = (
-				84471A421C29E4B1007D61E1 /* JKLLockScreenNumber.h */,
-				84471A431C29E4B1007D61E1 /* JKLLockScreenNumber.m */,
-				84471A441C29E4B1007D61E1 /* JKLLockScreenPincodeView.h */,
-				84471A451C29E4B1007D61E1 /* JKLLockScreenPincodeView.m */,
-				84471A461C29E4B1007D61E1 /* JKLLockScreenViewController.h */,
-				84471A471C29E4B1007D61E1 /* JKLLockScreenViewController.m */,
-				84471A481C29E4B1007D61E1 /* JKLLockScreenViewController.xib */,
-			);
-			path = LockScreenViewController;
-			sourceTree = "<group>";
-		};
 		846C19591BDD7B3A00753289 /* TWMessageBarManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -315,7 +290,6 @@
 		84E19E081BDA411C0045417A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				84471A411C29E4B1007D61E1 /* LockScreenViewController */,
 				846C196C1BDD7B5200753289 /* SWRevealViewController */,
 				846C19591BDD7B3A00753289 /* TWMessageBarManager */,
 				84C5D9DD1BDA7AB300346A17 /* LocalizationHelper.h */,
@@ -404,7 +378,6 @@
 				84471A401C29D2C5007D61E1 /* JKLockScreen.strings in Resources */,
 				84C5D9E81BDA7FF700346A17 /* Localizable.strings in Resources */,
 				846C19641BDD7B3A00753289 /* icon-error.png in Resources */,
-				84471A4C1C29E4B1007D61E1 /* JKLLockScreenViewController.xib in Resources */,
 				84C5D9ED1BDA801500346A17 /* Settings.bundle in Resources */,
 				84E19E181BDA411C0045417A /* Assets.xcassets in Resources */,
 			);
@@ -420,7 +393,6 @@
 				846C196A1BDD7B3A00753289 /* TWMessageBarManager.m in Sources */,
 				8467FD891BDF473F00F786B8 /* History.m in Sources */,
 				8459BDE21BDAC7E300A0AABA /* SelectTypeViewController.m in Sources */,
-				84471A491C29E4B1007D61E1 /* JKLLockScreenNumber.m in Sources */,
 				84C5D9A71BDA523C00346A17 /* Account+CoreDataProperties.m in Sources */,
 				84E19E0D1BDA411C0045417A /* AppDelegate.m in Sources */,
 				846E66B71BDE7C6700B20C61 /* MenuViewController.m in Sources */,
@@ -435,8 +407,6 @@
 				845729BC1BDAA464004848F4 /* AddAccountViewController.m in Sources */,
 				84E19E161BDA411C0045417A /* Account_Manager.xcdatamodeld in Sources */,
 				84C5D9AD1BDA542100346A17 /* DataManager.m in Sources */,
-				84471A4A1C29E4B1007D61E1 /* JKLLockScreenPincodeView.m in Sources */,
-				84471A4B1C29E4B1007D61E1 /* JKLLockScreenViewController.m in Sources */,
 				846C196F1BDD7B5200753289 /* SWRevealViewController.m in Sources */,
 				84C5D9B01BDA601C00346A17 /* TypesViewController.m in Sources */,
 				8478724E1C1833290066D7DF /* AES256.m in Sources */,

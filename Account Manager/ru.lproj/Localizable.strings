@@ -16,12 +16,15 @@
 /*Notification*/
 "Success_Message_Title"="Готово";
 "Info_Message_Title"="Информация";
+"Cancel_Message_Title"="Отмена";
 "Username_Was_Copy"="Имя пользователя скопировано в буфер";
 "Password_Was_Copy"="Пароль скопирован в буфер";
 "Buffer_Is_Clear"="Буфер очищен";
 "Account_Was_Added"="Аккаунт был добавлен";
 "Account_Was_Edit"="Аккаунт был изменен";
 "Account_Was_Delete"="Аккаунт был удален";
+"Password_Copy_Was_Cancel"="Копирование пароля отменено";
+"Wrong_Master_Key"="Неверный мастер ключ";
 
 /*Локализация заголовков навигационной панели*/
 "Types_Navigation_Item_Title"="Аккаунты";
