@@ -18,6 +18,7 @@
 		845878F41BDB019900E4EDC0 /* ResizeImageHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 845878F31BDB019900E4EDC0 /* ResizeImageHelper.m */; };
 		8459BDE21BDAC7E300A0AABA /* SelectTypeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8459BDE11BDAC7E300A0AABA /* SelectTypeViewController.m */; };
 		8459BDE51BDAD5C300A0AABA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8459BDE31BDAD5C300A0AABA /* Main.storyboard */; };
+		8459FB251C2A9CC3001FA9A2 /* RandomStringHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8459FB241C2A9CC3001FA9A2 /* RandomStringHelper.m */; };
 		8467FD831BDF461100F786B8 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8467FD821BDF461100F786B8 /* HistoryViewController.m */; };
 		8467FD881BDF473F00F786B8 /* History+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 8467FD851BDF473F00F786B8 /* History+CoreDataProperties.m */; };
 		8467FD891BDF473F00F786B8 /* History.m in Sources */ = {isa = PBXBuildFile; fileRef = 8467FD871BDF473F00F786B8 /* History.m */; };
@@ -73,6 +74,8 @@
 		8459BDE01BDAC7E300A0AABA /* SelectTypeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectTypeViewController.h; sourceTree = "<group>"; };
 		8459BDE11BDAC7E300A0AABA /* SelectTypeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectTypeViewController.m; sourceTree = "<group>"; };
 		8459BDE41BDAD5C300A0AABA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8459FB231C2A9CC3001FA9A2 /* RandomStringHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomStringHelper.h; sourceTree = "<group>"; };
+		8459FB241C2A9CC3001FA9A2 /* RandomStringHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomStringHelper.m; sourceTree = "<group>"; };
 		8467FD811BDF461100F786B8 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
 		8467FD821BDF461100F786B8 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
 		8467FD841BDF473F00F786B8 /* History+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "History+CoreDataProperties.h"; sourceTree = "<group>"; };
@@ -325,6 +328,8 @@
 				8467FD8B1BDF598700F786B8 /* StringFromDateHelper.m */,
 				8478724C1C1833290066D7DF /* AES256.h */,
 				8478724D1C1833290066D7DF /* AES256.m */,
+				8459FB231C2A9CC3001FA9A2 /* RandomStringHelper.h */,
+				8459FB241C2A9CC3001FA9A2 /* RandomStringHelper.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -441,6 +446,7 @@
 				84C5D9A91BDA523C00346A17 /* Type+CoreDataProperties.m in Sources */,
 				8467FD881BDF473F00F786B8 /* History+CoreDataProperties.m in Sources */,
 				84E1EB8C1BF27F290011F719 /* AboutViewController.m in Sources */,
+				8459FB251C2A9CC3001FA9A2 /* RandomStringHelper.m in Sources */,
 				84C5D9F21BDA884100346A17 /* AccountsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

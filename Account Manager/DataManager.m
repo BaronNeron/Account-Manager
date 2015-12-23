@@ -31,7 +31,7 @@
     newAccount.type = type;
     newAccount.username = username;
     NSData *data = [password dataUsingEncoding:NSUTF8StringEncoding];
-    newAccount.password = [data aes256EncryptWithKey:@"Salted__!*ôZP¿ý›ßž‚}.&¹8›dÆm"];
+    newAccount.password = [data aes256EncryptWithKey:[[NSUserDefaults standardUserDefaults] objectForKey:@"aes256key"]];
     NSError *error = nil;
     if(![context save:&error]){
         NSLog(@"Can't save new account! %@ %@", error, [error localizedDescription]);
@@ -48,7 +48,7 @@
     Account *editAccount = account;
     editAccount.username = username;
     NSData *data = [password dataUsingEncoding:NSUTF8StringEncoding];
-    editAccount.password = [data aes256EncryptWithKey:@"Salted__!*ôZP¿ý›ßž‚}.&¹8›dÆm"];
+    editAccount.password = [data aes256EncryptWithKey:[[NSUserDefaults standardUserDefaults] objectForKey:@"aes256key"]];
     NSError *error = nil;
     if(![context save:&error]){
         NSLog(@"Can't edit account! %@ %@", error, [error localizedDescription]);

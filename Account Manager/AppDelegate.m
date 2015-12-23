@@ -9,6 +9,7 @@
 #import "AES256.h"
 #import "AppDelegate.h"
 #import "DataManager.h"
+#import "RandomStringHelper.h"
 
 @interface AppDelegate ()
 
@@ -18,7 +19,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
     if (![[NSUserDefaults standardUserDefaults] boolForKey:@"hasLaunchedOnce"])
     {
         NSArray *types = @[@"Apple", @"Dropbox", @"Facebook", @"Google", @"Instagramm", @"Skype", @"Twitter", @"Vkontakte", @"Yahoo", @"Yandex", @"YouTube"];
@@ -27,6 +27,7 @@
         }
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"hasLaunchedOnce"];
         [[NSUserDefaults standardUserDefaults] synchronize];
+        [[NSUserDefaults standardUserDefaults] setObject:[RandomStringHelper randomStringWithLength:32] forKey:@"aes256key"];
     }
     [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"needPin"];
@@ -53,5 +54,7 @@
 
     [[DataManager sharedManager] saveContext];
 }
+
+
 
 @end

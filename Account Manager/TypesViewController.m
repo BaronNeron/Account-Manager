@@ -108,13 +108,8 @@
         }];
 
         UIAlertAction* copyPassword = [UIAlertAction actionWithTitle:Locale(@"Copy_Password_Alert_Action_Title") style:UIAlertActionStyleDefault handler:^(UIAlertAction * action){
-            JKLLockScreenViewController * viewController = [[JKLLockScreenViewController alloc] initWithNibName:NSStringFromClass([JKLLockScreenViewController class]) bundle:nil];
-            [viewController setLockScreenMode:LockScreenModeNormal];
-            [viewController setDelegate:self];
-            [viewController setDataSource:self];
-            [self presentViewController:viewController animated:YES completion:NULL];
             UIPasteboard *pb = [UIPasteboard generalPasteboard];
-            NSData *data = [account.password aes256DecryptWithKey:@"Salted__!*ôZP¿ý›ßž‚}.&¹8›dÆm"];
+            NSData *data = [account.password aes256DecryptWithKey:[[NSUserDefaults standardUserDefaults] objectForKey:@"aes256key"]];
             NSString* password = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
             [pb setString:password];
             NSString *newHistoryDetail = [NSString stringWithFormat:@"%@ %@ %@", Locale(@"Password_For"), account.defaultToType.name, Locale(@"Was_Copy")];
